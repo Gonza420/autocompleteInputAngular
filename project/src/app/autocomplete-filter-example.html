@@ -1,0 +1,28 @@
+  
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Number</mat-label>
+    <input 
+           type="text"
+           placeholder="Pick one"
+           matInput
+           [matAutocomplete]="auto"
+           aria-label="Number"
+           id = "inputAutocomplete"
+           name="name" 
+           (keyup)="onInputChange()" 
+           >
+    
+      <mat-autocomplete #auto="matAutocomplete" 
+    (optionSelected)='selected($event.option.value)' 
+    >
+    <mat-option *ngFor="let item of options" 
+    [value]="item">
+    {{item}}
+  </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+
+<!-- Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
